@@ -102,21 +102,23 @@
   }
 }
 
-.typing-effect::after {
-  content: "|";
-  animation: blink 1s step-end infinite;
-  margin-left: 2px;
-  color: #60a5fa;
+@keyframes typing {
+  from { width: 0; }
+  to { width: 70%; }
 }
 
 @keyframes blink {
-  from,
-  to {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  50% { border-color: transparent; }
+}
+
+.typing-effect {
+  display: inline-flex; /* Sử dụng inline-flex để căn chỉnh */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid; /* Tạo con trỏ */
+  animation:
+    typing 3s steps(30, end) forwards,
+    blink 0.75s step-end infinite;
 }
 
 /* Enhanced Prism.js styling */
