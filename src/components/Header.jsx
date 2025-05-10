@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import useClickOutside from "../hooks/useClickOutside";
 
 export default function Header() {
   const location = useLocation();
@@ -19,6 +20,7 @@ export default function Header() {
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const menuRef = useClickOutside(() => setIsMenuOpen(false));
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -226,7 +228,7 @@ export default function Header() {
             </div>
 
             {/* Mobile Navigation Links */}
-            <div className="md:hidden">
+            <div className="md:hidden" ref={menuRef}>
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.div
