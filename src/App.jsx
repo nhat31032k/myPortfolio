@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Hero from "./components/Hero";
-import "./assets/css/index.css";
+import "./assets/scss/index.scss";
 import Header from "./components/Header";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";

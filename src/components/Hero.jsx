@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
-import "../assets/css/tomorrow.css";
+import "../assets/scss/tomorrow.scss";
 import Meteors from "./ui/meteors";
 import PortfolioPage from "./PortfolioPage";
 import SparklesText from "./ui/sparkles-text";

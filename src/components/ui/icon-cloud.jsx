@@ -5,13 +5,7 @@ import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
 export const cloudProps = {
   containerProps: {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      paddingTop: 40,
-    },
+    className: "flex justify-center items-center w-full pt-10",
   },
   options: {
     reverse: true,
