@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "../assets/scss/tomorrow.scss";
 import Meteors from "./ui/meteors";
+import FallingStars from "./ui/falling-stars";
 import PortfolioPage from "./PortfolioPage";
 import SparklesText from "./ui/sparkles-text";
 import { FlipWords } from "./ui/flip-words";
@@ -93,6 +94,7 @@ const profile = {
           {/* Meteors Effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <Meteors number={10} />
+            <FallingStars number={10} />
           </div>
 
           {/* Main content container */}
