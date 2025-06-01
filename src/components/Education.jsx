@@ -1,13 +1,5 @@
-import React, { useState } from "react";
-import EducationLoader from "./ui/EducationLoader";
-import {
-  Star,
-  Award,
-  Calendar,
-  BookOpen,
-  GraduationCap,
-  Trophy,
-} from "lucide-react";
+import { useState } from "react";
+import { Award, Calendar, BookOpen, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EducationSection = () => {
@@ -15,25 +7,28 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
+      degree: "Information Technology - Computer Science",
+      school: "Ton Duc Thang University (TDTU)",
       mascot: "📘",
-      year: "2019-2021",
+      year: "2018-2022",
       achievements: ["GPA: 4.89", "Subject: Science"],
       skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
-      description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+      description: [
+        "Software Architectural Design, Planning",
+        "Machine-Learning Algorithms",
+        "Natural Language Processing Science",
+      ],
     },
-    {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
-      mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
-      description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
-    },
+    // {
+    //   degree: "Higher Secondary Certificate (HSC)",
+    //   school: "Dottopara Model Degree College",
+    //   mascot: "📗",
+    //   year: "2021-2023",
+    //   achievements: ["GPA: 4.25", "Subject: Arts"],
+    //   skills: ["Literature", "Social Studies", "Economics", "History"],
+    //   description:
+    //     "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+    // },
   ];
 
   const containerVariants = {
@@ -59,9 +54,7 @@ const EducationSection = () => {
   };
 
   return (
-    <section
-      className="min-h-screen relative overflow-hidden py-40 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90"
-    >
+    <section className="min-h-screen relative overflow-hidden py-40 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -82,13 +75,14 @@ const EducationSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          // className="grid grid-cols-1 md:grid-cols-1 gap-8"
+          className="flex items-center justify-center flex-wrap"
         >
           {educationData.map((edu, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
+              className={`max-w-auto relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
                 hoveredIndex === index
                   ? "border-teal-500 scale-[1.02]"
                   : "border-blue-400/20"
@@ -114,10 +108,20 @@ const EducationSection = () => {
                   </p>
                 </div>
 
-                <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
+                {/* <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
                   {edu.description}
-                </p>
-
+                </p> */}
+                <div className="space-y-2">
+                  {edu.description.map((item, idx) => (
+                    <p
+                      key={idx}
+                      className="text-gray-300 text-sm border-l-2 border-teal-500 pl-3 flex items-start gap-2"
+                    >
+                      <span className="text-teal-400">•</span>
+                      {item}
+                    </p>
+                  ))}
+                </div>
                 <div className="space-y-3">
                   <h4 className="text-sm font-semibold text-white flex items-center gap-2">
                     <Trophy className="w-4 h-4 text-yellow-500" />
