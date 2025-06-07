@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Hero from "./components/Hero";
 import "./assets/scss/index.scss";
 import Header from "./components/Header";
@@ -16,7 +16,7 @@ export default function App() {
     <>
       <Header />
       {/* Conditional Rendering */}
-      {isOnePage ? (
+      {/* {isOnePage ? (
         // One-Page Mode: Render all components together
         <>
           <Hero />
@@ -27,15 +27,16 @@ export default function App() {
         </>
       ) : (
         // Router Mode: Use routes for navigation
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      )}
+        
+      )} */}
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/education" element={<Education />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
     </>
   );
 }
