@@ -1,37 +1,20 @@
-import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "./globe";
-import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from "lucide-react";
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaDocker,
-  FaGitAlt,
-  FaLinux,
-  FaFigma,
-  FaAws,
-} from "react-icons/fa";
+import { Code2, Paintbrush, Layout, Cpu } from "lucide-react";
+import { FaReact, FaFigma } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
-  SiPostgresql,
-  SiMongodb,
-  SiGraphql,
-  SiJest,
-  SiWebpack,
   SiRedux,
   SiFirebase,
   SiVercel,
   SiVite,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
-import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
+import { BsFileEarmarkCode } from "react-icons/bs";
 import { MdAnimation } from "react-icons/md";
-import { FcWorkflow } from "react-icons/fc";
-
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
   <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
@@ -94,37 +77,37 @@ const SkillsSection = () => {
         },
       ],
     },
-    {
-      icon: Database,
-      title: "Backend Development",
-      color: "text-green-400",
-      skills: [
-        {
-          name: "Node.js",
-          icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
-        },
-        {
-          name: "Python",
-          icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
-        },
-        {
-          name: "PostgreSQL",
-          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
-        },
-        {
-          name: "REST APIs",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
-        },
-        {
-          name: "GraphQL",
-          icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
-        },
-      ],
-    },
+    // {
+    //   icon: Database,
+    //   title: "Backend Development",
+    //   color: "text-green-400",
+    //   skills: [
+    //     {
+    //       name: "Node.js",
+    //       icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
+    //     },
+    //     {
+    //       name: "Python",
+    //       icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
+    //     },
+    //     {
+    //       name: "PostgreSQL",
+    //       icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
+    //     },
+    //     {
+    //       name: "MongoDB",
+    //       icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
+    //     },
+    //     {
+    //       name: "REST APIs",
+    //       icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
+    //     },
+    //     {
+    //       name: "GraphQL",
+    //       icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
+    //     },
+    //   ],
+    // },
     {
       icon: Layout,
       title: "UI/UX Design",
@@ -135,35 +118,35 @@ const SkillsSection = () => {
           name: "Responsive Design",
           icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
         },
-        {
-          name: "Wireframing",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" />,
-        },
-        {
-          name: "Prototyping",
-          icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
-        },
+        // {
+        //   name: "Wireframing",
+        //   icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" />,
+        // },
+        // {
+        //   name: "Prototyping",
+        //   icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
+        // },
       ],
     },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      color: "text-orange-400",
-      skills: [
-        { name: "AWS", icon: <FaAws className="w-4 h-4 text-[#FF9900]" /> },
-        {
-          name: "Docker",
-          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
-        },
-        { name: "CI/CD", icon: <FcWorkflow className="w-4 h-4" /> },
-        {
-          name: "Kubernetes",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#326CE5]" />,
-        },
-        { name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
-        { name: "Linux", icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
-      ],
-    },
+    // {
+    //   icon: Cloud,
+    //   title: "Cloud & DevOps",
+    //   color: "text-orange-400",
+    //   skills: [
+    //     { name: "AWS", icon: <FaAws className="w-4 h-4 text-[#FF9900]" /> },
+    //     {
+    //       name: "Docker",
+    //       icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
+    //     },
+    //     { name: "CI/CD", icon: <FcWorkflow className="w-4 h-4" /> },
+    //     {
+    //       name: "Kubernetes",
+    //       icon: <BsGrid1X2 className="w-4 h-4 text-[#326CE5]" />,
+    //     },
+    //     { name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
+    //     { name: "Linux", icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
+    //   ],
+    // },
     {
       icon: Cpu,
       title: "Tools & Technologies",
@@ -173,11 +156,11 @@ const SkillsSection = () => {
           name: "VS Code",
           icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" />,
         },
-        { name: "Jest", icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
-        {
-          name: "Webpack",
-          icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
-        },
+        // { name: "Jest", icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
+        // {
+        //   name: "Webpack",
+        //   icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
+        // },
         { name: "Redux", icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
         {
           name: "Firebase",
@@ -196,14 +179,14 @@ const SkillsSection = () => {
           name: "UI Animation",
           icon: <MdAnimation className="w-4 h-4 text-[#FF4081]" />,
         },
-        {
-          name: "SVG Animation",
-          icon: <MdAnimation className="w-4 h-4 text-[#00C853]" />,
-        },
-        {
-          name: "3D Modeling",
-          icon: <Cpu className="w-4 h-4 text-[#7C4DFF]" />,
-        },
+        // {
+        //   name: "SVG Animation",
+        //   icon: <MdAnimation className="w-4 h-4 text-[#00C853]" />,
+        // },
+        // {
+        //   name: "3D Modeling",
+        //   icon: <Cpu className="w-4 h-4 text-[#7C4DFF]" />,
+        // },
         {
           name: "Motion Graphics",
           icon: <MdAnimation className="w-4 h-4 text-[#FF6D00]" />,

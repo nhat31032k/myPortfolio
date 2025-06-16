@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Hero from "./components/Hero";
 import "./assets/scss/index.scss";
 import Header from "./components/Header";
@@ -8,27 +7,10 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import { Route, Routes } from "react-router-dom";
-
 export default function App() {
-  const [isOnePage, setIsOnePage] = useState(false); // Toggle state
-
   return (
     <>
       <Header />
-      {/* Conditional Rendering */}
-      {/* {isOnePage ? (
-        // One-Page Mode: Render all components together
-        <>
-          <Hero />
-          <Skills />
-          <Experience />
-          <Education />
-          <Contact />
-        </>
-      ) : (
-        // Router Mode: Use routes for navigation
-        
-      )} */}
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/skills" element={<Skills />} />
