@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react";
-import {
-  FaHome,
-  FaLaptopCode,
-  FaBriefcase,
-  FaGraduationCap,
-  FaCode,
-  FaEnvelope,
-  FaBars,
-} from "react-icons/fa";
+// import {
+//   FaLaptopCode,
+//   FaBriefcase,
+//   FaGraduationCap,
+//   FaCode,
+//   FaEnvelope,
+//   FaBars,
+// } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import useClickOutside from "../hooks/useClickOutside";
+import { HouseIcon } from "./icons/Home/Home";
+import { MenuIcon } from "./icons/Menu/Menu";
+import { CodeXmlIcon } from "./icons/code/Code";
+import { SwordsIcon } from "./icons/exp/exp";
+import { BrainIcon } from "./icons/Education/Edu";
+import { BatteryFullIcon } from "./icons/Project/Project"
+import { MailsIcon } from "./icons/contact/Contact";
 
 export default function Header() {
   const location = useLocation();
@@ -19,7 +25,7 @@ export default function Header() {
     return path;
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [, setWindowWidth] = useState(window.innerWidth);
   const menuRef = useClickOutside(() => setIsMenuOpen(false));
 
   useEffect(() => {
@@ -29,22 +35,22 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { id: "home", icon: FaHome, text: "Home", path: "/" },
-    { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
+    { id: "home", icon: HouseIcon, text: "Home", path: "/" },
+    { id: "skills", icon: CodeXmlIcon, text: "Skills", path: "/skills" },
     {
       id: "experience",
-      icon: FaBriefcase,
+      icon: SwordsIcon,
       text: "Experience",
       path: "/experience",
     },
     {
       id: "education",
-      icon: FaGraduationCap,
+      icon: BrainIcon,
       text: "Education",
       path: "/education",
     },
-    { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
-    { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
+    { id: "projects", icon: BatteryFullIcon, text: "Projects", path: "/projects" },
+    { id: "contact", icon: MailsIcon, text: "Contact", path: "/contact" },
   ];
 
   const menuVariants = {
@@ -89,22 +95,21 @@ export default function Header() {
     },
   };
 
+  // eslint-disable-next-line react/prop-types
   const NavItem = ({ id, icon: Icon, text, path }) => (
     <motion.div
       whileHover={{
-        scale: 1.05,
+        scale: 1.02,
         transition: {
-          type: "spring",
-          stiffness: 400,
-          damping: 10,
+          duration: 0.2,
+          ease: "easeOut",
         },
       }}
       whileTap={{
-        scale: 0.95,
+        scale: 0.98,
         transition: {
-          type: "spring",
-          stiffness: 400,
-          damping: 10,
+          duration: 0.1,
+          ease: "easeOut",
         },
       }}
     >
@@ -138,8 +143,8 @@ export default function Header() {
         />
         <motion.div
           className="relative z-10"
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           <Icon
             className={`text-base ${
@@ -149,8 +154,8 @@ export default function Header() {
         </motion.div>
         <motion.span
           className="relative z-10 inline"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           {text}
         </motion.span>
@@ -206,24 +211,22 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
                 whileHover={{
-                  scale: 1.1,
-                  rotate: 90,
+                  scale: 1.05,
+                  rotate: 45,
                   transition: {
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 10,
+                    duration: 0.2,
+                    ease: "easeOut",
                   },
                 }}
                 whileTap={{
                   scale: 0.95,
                   transition: {
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 10,
+                    duration: 0.1,
+                    ease: "easeOut",
                   },
                 }}
               >
-                <FaBars />
+                <MenuIcon />
               </motion.button>
             </div>
 
